@@ -2,11 +2,11 @@
 Tree for building TWRP for Xiaomi MI 6
 
 ## Note
-Only compatible with Android 11 and newer
+The default branch has not been tested, so don't use it to build it for the time being
 
 ## To compile
 
-repo init --depth=1 -b twrp-11 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
+repo init --depth=1 -b twrp-12.1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
 
 . build/envsetup.sh && lunch twrp_sagit-eng
 
