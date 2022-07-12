@@ -14,3 +14,7 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
     ro.bootimage.build.date.utc \
     ro.build.date.utc
+
+# keystore2
+PRODUCT_PACKAGES += \
+    android.system.keystore2
