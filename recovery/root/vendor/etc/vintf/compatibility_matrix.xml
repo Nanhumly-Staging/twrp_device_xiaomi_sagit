@@ -56,6 +56,6 @@
         </interface>
     </hal>
     <vndk>
-        <version>28</version>
+        <version>32</version>
     </vndk>
 </compatibility-matrix>
