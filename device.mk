@@ -15,11 +15,11 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
     ro.bootimage.build.date.utc \
     ro.build.date.utc
 
-# keystore2
+# Keystore2
 PRODUCT_PACKAGES += \
     android.system.keystore2
     
-# keymaster
+# Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service_recovery
