@@ -27,4 +27,19 @@ LOCAL_PATH := $(call my-dir)
 
 ifneq ($(filter sagit,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
+
+include $(CLEAR_VARS)
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_MODULE := android.hardware.keymaster@3.0-service_recovery
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/system/bin
+LOCAL_MODULE_STEM := android.hardware.keymaster@3.0-service
+LOCAL_REQUIRED_MODULES := android.hardware.keymaster@3.0-service
+LOCAL_SRC_FILES := ../../../$(TARGET_OUT_VENDOR_EXECUTABLES)/hw/android.hardware.keymaster@3.0-service
+LOCAL_POST_INSTALL_CMD := \
+    touch $(TARGET_RECOVERY_ROOT_OUT)/system/bin/qseecomd; \
+    bash device/qcom/twrp-common/scripts/service_cleanup.bash;
+include $(BUILD_PREBUILT)
+
 endif
