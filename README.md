@@ -1,16 +1,10 @@
 # android_device_xiaomi_sagit
+
 Tree for building TWRP for Xiaomi MI 6
 
 ## Note
-The default branch has not been tested, so don't use it to build it for the time being
 
-## To compile
-
-repo init --depth=1 -b twrp-12.1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
-
-. build/envsetup.sh && lunch twrp_sagit-eng
-
-mka adbd recoveryimage
+Decryption works on Android 12.x ROMs(Test work in PixelExperience 12)
 
 ## Device specifications
 
@@ -34,3 +28,30 @@ Rear Camera  | Dual 12 MP (27mm, f/1.8, OIS 4-axis & 52mm, f/2.6), phase detecti
 ## Kernel Source
 
 https://github.com/Miccia94/kernel_xiaomi_msm8998/tree/twrp
+
+## Compile
+
+First repo init the TWRP 12.1 tree:
+
+```shell
+repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
+```
+
+Sync source:
+
+```shell
+repo sync
+```
+
+In order to successfully build in this branch, the following patch(es) will need to be cherry-picked:
+
+- [fscrypt: wip](https://gerrit.twrp.me/c/android_bootable_recovery/+/5405)
+- [fscrypt: move functionality to libvold](https://gerrit.twrp.me/c/android_system_vold/+/5540)
+
+Finally execute these:
+
+```
+.build/envsetup.sh
+lunch twrp_sagit-eng
+mka recoveryimage
+```
