@@ -1,0 +1,13 @@
+allow recovery apc_service:service_manager add;
+allow recovery authorization_service:service_manager { add find };
+allow recovery hal_gatekeeper_hwservice:hwservice_manager { add find };
+allow recovery hal_keymaster_hwservice:hwservice_manager { add find };
+allow recovery hidl_base_hwservice:hwservice_manager add;
+allow recovery hidl_manager_hwservice:hwservice_manager add;
+allow recovery hidl_token_hwservice:hwservice_manager add;
+allow recovery keystore_compat_hal_service:service_manager { add find };
+allow recovery keystore_maintenance_service:service_manager add;
+allow recovery keystore_metrics_service:service_manager add;
+allow recovery keystore_service:service_manager { add find };
+allow recovery self:keystore2 add_auth;
+allow recovery service_manager_service:service_manager add;
