@@ -47,6 +47,7 @@ In order to successfully build in this branch, the following patch(es) will need
 
 - [fscrypt: wip](https://gerrit.twrp.me/c/android_bootable_recovery/+/5405)
 - [fscrypt: move functionality to libvold](https://gerrit.twrp.me/c/android_system_vold/+/5540)
+- [mtp: Allow transfer of files larger than 4G](https://gerrit.twrp.me/c/android_bootable_recovery/+/5689)
 
 Finally execute these:
 
