@@ -1,6 +1,8 @@
 # android_device_xiaomi_sagit
 
-Tree for building TWRP for Xiaomi MI 6
+Tree for building OrangeFox Recovery for Xiaomi MI 6
+
+![OFRP](https://image.ibb.co/cTMWux/logo.jpg "OFRP")
 
 ## Note
 
@@ -31,23 +33,9 @@ https://github.com/Miccia94/kernel_xiaomi_msm8998/tree/twrp
 
 ## Compile
 
-First repo init the TWRP 12.1 tree:
+First Sync source using official script:
 
-```shell
-repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
-```
-
-Sync source:
-
-```shell
-repo sync
-```
-
-In order to successfully build in this branch, the following patch(es) will need to be cherry-picked:
-
-- [fscrypt: wip](https://gerrit.twrp.me/c/android_bootable_recovery/+/5405)
-- [fscrypt: move functionality to libvold](https://gerrit.twrp.me/c/android_system_vold/+/5540)
-- [mtp: Allow transfer of files larger than 4G](https://gerrit.twrp.me/c/android_bootable_recovery/+/5689)
+https://gitlab.com/OrangeFox/sync
 
 Finally execute these:
 
