@@ -132,6 +132,7 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone5/temp
 TW_DEVICE_VERSION := 0Ranko0P
+TW_FRAMERATE := 60
 
 CUSTOM_BUILD_DEBUG := false
 ifeq ($(CUSTOM_BUILD_DEBUG),true)
