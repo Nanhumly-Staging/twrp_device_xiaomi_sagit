@@ -132,6 +132,7 @@ TW_THEME := portrait_hdpi
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone5/temp
 TW_DEVICE_VERSION := Nanhumly
 TW_FRAMERATE := 60
+TW_USE_LEGACY_BATTERY_SERVICES := true
 
 CUSTOM_BUILD_DEBUG := false
 ifeq ($(CUSTOM_BUILD_DEBUG),true)
