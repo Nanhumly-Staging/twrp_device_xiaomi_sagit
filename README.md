@@ -1,26 +1,11 @@
-# android_device_xiaomi_sagit
-Tree for building TWRP for Xiaomi MI 6
-
-## Note
-Only compatible with Android 11 and newer
-
-## To compile
-
-repo init --depth=1 -b twrp-12.1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
-
-. build/envsetup.sh && lunch twrp_sagit-eng
-
-mka adbd recoveryimage
-
-### Special Notes for this branch
-- Device makefile in the device tree and dependencies file should use the "twrp" prefix.
-- Currently, decryption on 12.1 is a work in progress (WIP). Decryption is only fully functional (i.e. works with password/PIN/pattern) on legacy Pixel devices that use weaver but do not use wrappedkey. On other devices, decryption will only work if no password/PIN/pattern is set in Android.
-- FDE decryption is not presently supported in this branch.
-- In order to successfully build in this branch, the following patch(es) will need to be cherry-picked:
-
-    - [fscrypt: wip](https://gerrit.twrp.me/c/android_bootable_recovery/+/5405)
-    - [fscrypt: move functionality to libvold](https://gerrit.twrp.me/c/android_system_vold/+/5540)
-    - [partition: unmount partition before format](https://github.com/0ranko0P/twrp_device_xiaomi_sagit/tree/android-12.1/patches)
+# TWRP Tree for Xiaomi Mi 6
+```
+#
+# Copyright (C) 2012-2024 Team Win Recovery Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+```
 
 ## Device specifications
 
@@ -36,11 +21,32 @@ Battery | Li-Po 3350 mAh battery
 Display | 1080 x 1920 pixels, 5.15 inches (~428 ppi pixel density)
 Rear Camera  | Dual 12 MP (27mm, f/1.8, OIS 4-axis & 52mm, f/2.6), phase detection autofocus, dual-LED (dual tone) flash
 
-
 ## Device picture
 
-![Xiaomi Mi 6](https://xiaomi-mi.com/uploads/CatalogueImage/xiaomi-mi-6-exclusive-edition-6gb128gb-dual-sim-ceramic-black-01_15554_1492602917.jpg "Xiaomi Mi 6 in black")
+![Xiaomi Mi 6](http://i8.mifile.cn/a1/pms_1492571518.47778002!560x560.jpg "Xiaomi Mi 6 in black")
 
 ## Kernel Source
 
-https://github.com/Miccia94/kernel_xiaomi_msm8998/tree/twrp
+https://github.com/Nanhumly-Staging/android_kernel_xiaomi_msm8998
+
+## Compile
+
+First repo init the TWRP 12.1 tree:
+
+```shell
+repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
+```
+
+Sync source:
+
+```shell
+repo sync
+```
+
+Finally execute these:
+
+```
+.build/envsetup.sh
+lunch twrp_sagit-eng
+mka recoveryimage
+```
